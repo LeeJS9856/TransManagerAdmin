@@ -12,11 +12,11 @@
                 android:color="@color/sky"/>
         </shape>
     </item>
-    <item   android:end="240dp">
+    <item   android:end="270dp">
         <shape
             android:shape="rectangle">
             <corners android:radius="20dp"/>
-            <size android:width="120dp"
+            <size android:width="90dp"
                 android:height="48dp"/>
             <solid android:color="@color/sky"/>
         </shape>

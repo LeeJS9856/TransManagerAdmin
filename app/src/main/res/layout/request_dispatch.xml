@@ -138,7 +138,7 @@
                 android:layout_weight="2"
                 android:layout_gravity="center"
                 android:fontFamily="@font/kopubdotumbold"
-                android:text="@string/from"
+                android:text="@string/start"
                 android:textColor="@color/black"
                 android:textSize="17sp" />
 
@@ -173,7 +173,7 @@
                 android:layout_weight="2"
                 android:layout_gravity="center"
                 android:fontFamily="@font/kopubdotumbold"
-                android:text="@string/to"
+                android:text="@string/end"
                 android:textColor="@color/black"
                 android:textSize="17sp" />
 

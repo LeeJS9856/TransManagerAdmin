@@ -12,7 +12,7 @@
                 android:color="@color/sky"/>
         </shape>
     </item>
-    <item   android:start = "90dp" android:end="180dp">
+    <item   android:start="270dp">
         <shape
             android:shape="rectangle">
             <corners android:radius="20dp"/>
