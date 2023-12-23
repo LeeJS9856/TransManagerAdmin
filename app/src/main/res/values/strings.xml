@@ -6,4 +6,7 @@
     <string name="request_regist">등록 요청</string>
     <string name="data">데이터</string>
     <string name="vihicle_profile">차량 정보</string>
+    <string name="start">출발지</string>
+    <string name="end">도착지</string>
+    <string name="product">제품</string>
 </resources>

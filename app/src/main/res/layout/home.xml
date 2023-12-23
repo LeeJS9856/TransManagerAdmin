@@ -16,6 +16,7 @@
 
 
             <LinearLayout
+                android:id="@+id/btn_trans_list"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="18dp"
@@ -53,6 +54,7 @@
 
 
             <LinearLayout
+                android:id="@+id/btn_statistic"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="18dp"
@@ -99,6 +101,7 @@
 
 
             <LinearLayout
+                android:id="@+id/btn_data"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="18dp"
@@ -136,6 +139,7 @@
 
 
             <LinearLayout
+                android:id="@+id/btn_request_dispatch"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="18dp"
@@ -180,6 +184,7 @@
             android:layout_weight="1">
 
             <LinearLayout
+                android:id="@+id/btn_request_regist"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="18dp"
@@ -190,15 +195,17 @@
                 android:background="@drawable/bg_button_fill"
                 android:orientation="vertical">
 
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:background="@drawable/img_request_regist" />
@@ -217,6 +224,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btn_vihicle_profile"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="18dp"
