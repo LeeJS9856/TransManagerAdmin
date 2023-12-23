@@ -9,4 +9,9 @@
     <string name="start">출발지</string>
     <string name="end">도착지</string>
     <string name="product">제품</string>
+    <string name="vihicle_number">차량 번호</string>
+    <string name="to">도착지</string>
+    <string name="from">출발지</string>
+    <string name="quantity">수량</string>
+    <string name="hint_quantity">수량 입력</string>
 </resources>
