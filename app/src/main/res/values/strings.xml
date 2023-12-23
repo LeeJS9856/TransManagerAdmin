@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TransManagerAdmin</string>
+    <string name="list_trans">운송 내역</string>
+    <string name="statistic">통계</string>
+    <string name="request_dispatch">배차 요청</string>
+    <string name="request_regist">등록 요청</string>
+    <string name="data">데이터</string>
+    <string name="vihicle_profile">차량 정보</string>
 </resources>
