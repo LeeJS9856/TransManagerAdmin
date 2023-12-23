@@ -29,7 +29,6 @@
 
     <!-- Auto layout, variables, and unit scale are not yet supported -->
     <TextView
-        android:id="@+id/text_trans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

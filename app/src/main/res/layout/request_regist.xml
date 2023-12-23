@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/android_sma"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E3E3E3"
@@ -35,7 +34,6 @@
 
         <!-- Auto layout, variables, and unit scale are not yet supported -->
         <TextView
-            android:id="@+id/text_trans"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -47,9 +45,14 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
     </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="17dp"
-        android:layout_below="@id/layout"/>
+        android:layout_below="@id/layout"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="17dp" />
 </RelativeLayout>
