@@ -13,4 +13,5 @@
     <string name="quantity">수량</string>
     <string name="hint_quantity">수량 입력</string>
     <string name="agent">대리점</string>
+    <string name="name">이름</string>
 </resources>

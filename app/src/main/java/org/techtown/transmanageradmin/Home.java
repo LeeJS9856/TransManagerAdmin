@@ -73,7 +73,8 @@ public class Home extends AppCompatActivity {
         btn_vihicleProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(Home.this, VihicleProfile.class);
+                startActivity(intent);
             }
         });
 
