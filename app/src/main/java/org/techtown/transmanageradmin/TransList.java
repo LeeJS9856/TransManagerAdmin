@@ -272,38 +272,39 @@ public class TransList extends AppCompatActivity {
                         String quantity = item.getString("quantity");
                         String agency = item.getString("agency");
 
-                        TransData transData = null;
                         switch (categorie) {
                             case "차량별" :
                                 if(vihicle_number.equals(value)) {
-                                    transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    data.add(transData);
                                 }
                                 break;
                             case "대리점별" :
                                 if(agency.equals(value)) {
-                                    transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    data.add(transData);
                                 }
                                 break;
                             case "출발지별" :
                                 if(start.equals(value)) {
-                                    transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    data.add(transData);
                                 }
                                 break;
                             case "도착지별" :
                                 if(end.equals(value)) {
-                                    transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    data.add(transData);
                                 }
                                 break;
                             case "제품별" :
                                 if(product.equals(value)) {
-                                    transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    data.add(transData);
                                 }
                                 break;
-                            default:
-                                transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
-                                break;
+
                         }
-                        data.add(transData);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -359,7 +360,7 @@ public class TransList extends AppCompatActivity {
                 try{
                     JSONArray jsonArray = new JSONArray(response);
                     int length = jsonArray.length()-1;
-                    for(int i=0;i<length;i++) {
+                    for(int i=0;i<=length;i++) {
                         JSONObject item = jsonArray.getJSONObject(i);
                         String vihiclenumber = item.getString("vihiclenumber");
                         list_vihiclenumber.add(vihiclenumber);
