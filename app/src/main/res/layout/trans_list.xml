@@ -104,11 +104,38 @@
             android:textAlignment="center"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/sum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="총 수량"
+            android:textColor="@color/sky"
+            android:textSize="20sp"
+            android:fontFamily="@font/kopubdotumbold"/>
+        <TextView
+            android:id="@+id/text_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00.00"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/kopubdotumbold"/>
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_categorie"
+        android:layout_above="@id/sum"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
 </RelativeLayout>

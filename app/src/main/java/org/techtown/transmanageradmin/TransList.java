@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,11 +32,13 @@ import java.util.Date;
 
 public class TransList extends AppCompatActivity {
     Spinner spinner_year, spinner_month, spinner_categorie, spinner_data;
+    double sum=0;
     String[] arr_month = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
     String[] arr_categorie = {"차량별", "대리점별", "출발지별", "도착지별", "제품별"};
     String[] today, arr_year, arr_data;
     String choiced_year, choiced_month, choiced_categorie, choiced_data;
     ImageButton bt_back;
+    TextView text_sum;
     RecyclerView recyclerView;
     ArrayList<String> list_from = new ArrayList<>();
     ArrayList<String> list_to = new ArrayList<>();
@@ -61,6 +64,7 @@ public class TransList extends AppCompatActivity {
         spinner_categorie = findViewById(R.id.spinner_categorie);
         spinner_data = findViewById(R.id.spinner_data);
         bt_back = findViewById(R.id.back);
+        text_sum = findViewById(R.id.text_sum);
 
         recyclerView = findViewById(R.id.recyclerView);
     }
@@ -261,6 +265,7 @@ public class TransList extends AppCompatActivity {
                 try{
                     JSONArray jsonArray = new JSONArray(response);
                     int length = jsonArray.length();
+                    sum=0;
                     for(int i=0;i<length;i++) {
                         JSONObject item = jsonArray.getJSONObject(i);
                         int id = item.getInt("id");
@@ -276,35 +281,43 @@ public class TransList extends AppCompatActivity {
                             case "차량별" :
                                 if(vihicle_number.equals(value)) {
                                     TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    sum = sum + Double.parseDouble(quantity);
                                     data.add(transData);
                                 }
                                 break;
                             case "대리점별" :
                                 if(agency.equals(value)) {
                                     TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    sum = sum + Double.parseDouble(quantity);
                                     data.add(transData);
                                 }
                                 break;
                             case "출발지별" :
                                 if(start.equals(value)) {
                                     TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    sum = sum + Double.parseDouble(quantity);
                                     data.add(transData);
                                 }
                                 break;
                             case "도착지별" :
                                 if(end.equals(value)) {
                                     TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    sum = sum + Double.parseDouble(quantity);
                                     data.add(transData);
                                 }
                                 break;
                             case "제품별" :
                                 if(product.equals(value)) {
                                     TransData transData = new TransData(id, year, month, day, vihicle_number, product, start, end, quantity, agency);
+                                    sum = sum + Double.parseDouble(quantity);
                                     data.add(transData);
                                 }
                                 break;
 
                         }
+
+                        //수량 총합 텍스트 집어넣기
+                        text_sum.setText(Double.toString(sum));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
