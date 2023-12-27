@@ -8,11 +8,11 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DeleteMapDataRequest extends StringRequest {
-    final static private String URL = "http://gm8668.dothome.co.kr/DeleteMapData.php";
+public class RequestRegistMapData extends StringRequest {
+    final static private String URL = "http://gm8668.dothome.co.kr/registMapData.php";
     private Map<String, String> map;
 
-    public DeleteMapDataRequest(String property, String name, Response.Listener<String> listener) {
+    public RequestRegistMapData(String property, String name, Response.Listener<String> listener) {
         super(Request.Method.POST, URL, listener, null);
 
         map = new HashMap<>();

@@ -78,9 +78,9 @@ public class MapDataAdapter extends RecyclerView.Adapter<MapDataAdapter.ViewHold
                         };
                         String property = dataSet.get(position).getProperty();
                         String name = dataSet.get(position).getName();
-                        DeleteMapDataRequest deleteMapDataRequest = new DeleteMapDataRequest(property, name, ResponseListener);
+                        RequestDeleteMapData requestDeleteMapData = new RequestDeleteMapData(property, name, ResponseListener);
                         RequestQueue Queue = Volley.newRequestQueue(view.getContext());
-                        Queue.add(deleteMapDataRequest);
+                        Queue.add(requestDeleteMapData);
 
                         //리사이클러뷰에서 해당 데이터 삭제
                         dataSet.remove(position);

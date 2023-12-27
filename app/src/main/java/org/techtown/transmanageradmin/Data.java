@@ -48,6 +48,7 @@ public class Data extends AppCompatActivity {
         backButton();
         clickCategorieEvent();
         requestMapData();
+        setAddButton();
     }
 
     protected void xml() {
@@ -220,4 +221,13 @@ public class Data extends AppCompatActivity {
 
     private ArrayList<MapData> getData() {return data;}
 
+    private void setAddButton() {
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, AddData.class);
+                startActivity(intent);
+            }
+        });
+    }
 }

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Auto layout, variables, and unit scale are not yet supported -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/regist_trans"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="18dp"
+        android:layout_height="27dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16.69dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16.69dp"
+        android:background="@drawable/img_back" />
+
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <View
+        android:id="@+id/line_head"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/line"
+        />
+
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <TextView
+        android:id="@+id/text_trans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:text="@string/add_data"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="63dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_categorie"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/inter"
+                android:text="@string/categorie"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <Spinner
+                android:id="@+id/spinner_categorie"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="5"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_button_blank"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:fontFamily="@font/inter"
+                android:text="@string/data"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/edit_text_data"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="9dp"
+                android:layout_weight="5"
+                android:hint="@string/input_data"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColorHint="#ACACAC"
+                android:background="@drawable/bg_button_blank"
+                android:inputType="text"
+                android:fontFamily="@font/inter" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <android.widget.Button
+        android:id="@+id/btn_add_data"
+        android:layout_width="324dp"
+        android:layout_height="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/bg_button_sky"
+        android:text="@string/add_data"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:fontFamily="@font/kopubdotumbold"
+        />
+</RelativeLayout>
