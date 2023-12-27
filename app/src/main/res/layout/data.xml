@@ -2,6 +2,7 @@
 <!-- Auto layout, variables, and unit scale are not yet supported -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
@@ -49,6 +50,7 @@
         android:gravity="center"
         >
         <LinearLayout
+            android:id="@+id/layout_categorie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -56,7 +58,7 @@
             android:layout_marginBottom="18dp"
             android:background="@drawable/bg_data_button_1">
             <TextView
-                android:id="@+id/text_agent"
+                android:id="@+id/text_agency"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
@@ -111,23 +113,27 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_data_add_button">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center|center_horizontal"
-            android:background="@drawable/img_add"
-            android:layout_margin="7dp"
-            />
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/img_add" />
 
     </RelativeLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/layout_data"
         android:layout_above="@+id/btn_add"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
 </RelativeLayout>
