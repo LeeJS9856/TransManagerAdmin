@@ -60,7 +60,9 @@ public class VihicleProfile extends AppCompatActivity {
     }
 
     protected void setRecyclerView() {
+        data.clear();
         Response.Listener<String> profileResponseListener = new Response.Listener<String>() {
+
             @Override
             public void onResponse(String response) {
                 try {

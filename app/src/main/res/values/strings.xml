@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TransManagerAdmin</string>
+    <string name="app_name">광문산업관리자</string>
     <string name="list_trans">운송 내역</string>
     <string name="statistic">통계</string>
     <string name="dispatch">배차</string>
