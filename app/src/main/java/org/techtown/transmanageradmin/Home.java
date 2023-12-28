@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Home extends AppCompatActivity {
-    LinearLayout btn_transList, btn_statistic, btn_data, btn_requestDispatch, btn_requestRegist, btn_vihicleProfile;
+    LinearLayout btn_transList, btn_statistic, btn_data, btn_dispatch, btn_requestRegist, btn_vihicleProfile;
     private long backKeyPressedTime = 0;
 
     @Override
@@ -27,7 +27,7 @@ public class Home extends AppCompatActivity {
         btn_transList = findViewById(R.id.btn_trans_list);
         btn_statistic = findViewById(R.id.btn_statistic);
         btn_data = findViewById(R.id.btn_data);
-        btn_requestDispatch = findViewById(R.id.btn_request_dispatch);
+        btn_dispatch = findViewById(R.id.btn_dispatch);
         btn_requestRegist = findViewById(R.id.btn_request_regist);
         btn_vihicleProfile = findViewById(R.id.btn_vihicle_profile);
     }
@@ -57,7 +57,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        btn_requestDispatch.setOnClickListener(new View.OnClickListener() {
+        btn_dispatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -67,7 +67,8 @@ public class Home extends AppCompatActivity {
         btn_requestRegist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(Home.this, RegistRequest.class);
+                startActivity(intent);
             }
         });
 

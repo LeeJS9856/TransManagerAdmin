@@ -40,7 +40,7 @@
         android:layout_marginTop="18dp"
         android:fontFamily="@font/kopubdotumbold"
         android:gravity="center"
-        android:text="배차 요청"
+        android:text="@string/request_dispatch"
         android:textColor="@color/black"
         android:textSize="20sp" />
 

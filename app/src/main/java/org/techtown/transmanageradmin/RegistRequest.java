@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,30 +22,28 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class VihicleProfile extends AppCompatActivity {
-    ImageButton bt_back;
-    Context context = VihicleProfile.this;
+public class RegistRequest extends AppCompatActivity {
+    ImageButton btn_back;
     RecyclerView recyclerView;
+    Context context = RegistRequest.this;
     static ArrayList<ProfileData> data = new ArrayList<>();
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vihicle_profile);
+        setContentView(R.layout.request_regist);
         xml();
         backButton();
         setRecyclerView();
     }
 
     protected void xml() {
-        //xml과 연결
-        bt_back = findViewById(R.id.back);
+        btn_back = findViewById(R.id.back);
         recyclerView = findViewById(R.id.recyclerView);
     }
 
     protected void backButton() {
         //뒤로가기 버튼
-        bt_back.setOnClickListener(new View.OnClickListener() {
+        btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, Home.class);
@@ -60,38 +58,44 @@ public class VihicleProfile extends AppCompatActivity {
     }
 
     protected void setRecyclerView() {
-        Response.Listener<String> profileResponseListener = new Response.Listener<String>() {
+        //리사이클러뷰 설정
+        RequestRequestDataAdapter requestRequestDataAdapter = new RequestRequestDataAdapter(context);
+
+        //리퀘스트 데이터 불러오기
+        Response.Listener<String> responseRequestListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                try {
+                try{
                     JSONArray jsonArray = new JSONArray(response);
-                    int length = jsonArray.length() - 1;
-                    for (int i = 0; i <= length; i++) {
+                    int length = jsonArray.length();
+                    for(int i=0;i<length;i++) {
                         JSONObject item = jsonArray.getJSONObject(i);
                         String username = item.getString("username");
                         String vihiclenumber = item.getString("vihiclenumber");
                         String phonenumber = item.getString("phonenumber");
-                        ProfileData profileData = new ProfileData(username, phonenumber, vihiclenumber, "");
+                        String password = item.getString("password");
+
+                        ProfileData profileData = new ProfileData(username, phonenumber, vihiclenumber, password);
                         data.add(profileData);
                     }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         };
-        RequestProfileData Request = new RequestProfileData(profileResponseListener);
-        RequestQueue Queue = Volley.newRequestQueue(context);
-        Queue.add(Request);
+        RequestRequestData requestRequestData =
+                new RequestRequestData(responseRequestListener);
+        RequestQueue queue = Volley.newRequestQueue(context);
+        queue.add(requestRequestData);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                ProfileDataAdapter profileDataAdapter = new ProfileDataAdapter(context);
-                profileDataAdapter.submitData(getData());
-                recyclerView.setAdapter(profileDataAdapter);
+                requestRequestDataAdapter.submitData(getData());
+                recyclerView.setAdapter(requestRequestDataAdapter);
             }
         }, 1000);
-
-
     }
+
 }

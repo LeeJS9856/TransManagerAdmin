@@ -139,7 +139,7 @@
 
 
             <LinearLayout
-                android:id="@+id/btn_request_dispatch"
+                android:id="@+id/btn_dispatch"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="18dp"
@@ -171,7 +171,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/kopubdotumbold"
                     android:gravity="center"
-                    android:text="@string/request_dispatch"
+                    android:text="@string/dispatch"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
             </LinearLayout>
