@@ -61,6 +61,7 @@ public class RegistRequest extends AppCompatActivity {
         //리사이클러뷰 설정
         RequestRequestDataAdapter requestRequestDataAdapter = new RequestRequestDataAdapter(context);
 
+        data.clear();
         //리퀘스트 데이터 불러오기
         Response.Listener<String> responseRequestListener = new Response.Listener<String>() {
             @Override
