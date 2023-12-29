@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -30,7 +28,7 @@ public class Data extends AppCompatActivity {
     RecyclerView recyclerView;
     ImageButton btn_back;
     TextView btn_agency, btn_start, btn_end, btn_product;
-    RelativeLayout btn_add;
+    LinearLayout btn_add;
     LinearLayout layout_categorie;
     ArrayList<String> list_from = new ArrayList<>();
     ArrayList<String> list_to = new ArrayList<>();
@@ -98,10 +96,9 @@ public class Data extends AppCompatActivity {
                 public void onClick(View view) {
                     if(System.currentTimeMillis() > 1000 + btnClickTime) {
                         categorie = 0;
-                        layout_categorie.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_data_button_1));
                         changeTextColor();
                         btn_agency.setTextColor(ContextCompat.getColor(context, R.color.white));
-
+                        btn_agency.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_data_button));
                         //리사이클러뷰 데이터 집어넣기
                         data.clear();
                         for (String i : list_agency) {
@@ -117,9 +114,9 @@ public class Data extends AppCompatActivity {
                 public void onClick(View view) {
                     if(System.currentTimeMillis() > 1000 + btnClickTime) {
                         categorie = 1;
-                        layout_categorie.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_data_button_2));
                         changeTextColor();
                         btn_start.setTextColor(ContextCompat.getColor(context, R.color.white));
+                        btn_start.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_data_button));
 
                         //리사이클러뷰 데이터 집어넣기
                         data.clear();
@@ -136,9 +133,9 @@ public class Data extends AppCompatActivity {
                 public void onClick(View view) {
                     if(System.currentTimeMillis() > 1000 + btnClickTime) {
                         categorie = 2;
-                        layout_categorie.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_data_button_3));
                         changeTextColor();
                         btn_end.setTextColor(ContextCompat.getColor(context, R.color.white));
+                        btn_end.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_data_button));
 
                         //리사이클러뷰 데이터 집어넣기
                         data.clear();
@@ -155,10 +152,9 @@ public class Data extends AppCompatActivity {
                 public void onClick(View view) {
                     if(System.currentTimeMillis() > 1000 + btnClickTime) {
                         categorie = 3;
-                        layout_categorie.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_data_button_4));
                         changeTextColor();
                         btn_product.setTextColor(ContextCompat.getColor(context, R.color.white));
-
+                        btn_product.setBackground(ContextCompat.getDrawable(context, R.drawable.bg_data_button));
                         //리사이클러뷰 데이터 집어넣기
                         data.clear();
                         for (String i : list_product) {
@@ -179,7 +175,10 @@ public class Data extends AppCompatActivity {
         btn_start.setTextColor(ContextCompat.getColor(context, R.color.sky));
         btn_end.setTextColor(ContextCompat.getColor(context, R.color.sky));
         btn_product.setTextColor(ContextCompat.getColor(context, R.color.sky));
-
+        btn_agency.setBackground(ContextCompat.getDrawable(context, R.color.trnasparent));
+        btn_start.setBackground(ContextCompat.getDrawable(context, R.color.trnasparent));
+        btn_end.setBackground(ContextCompat.getDrawable(context, R.color.trnasparent));
+        btn_product.setBackground(ContextCompat.getDrawable(context, R.color.trnasparent));
     }
 
     protected void requestMapData() {

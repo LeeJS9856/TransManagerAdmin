@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/bg_request_regist_catdview"
@@ -24,25 +24,25 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/kopubdotumbold"
                 android:gravity="center_vertical"
                 android:text="@string/vihicle_number"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/text_vihiclenumber"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:text="8668"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
@@ -54,25 +54,25 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/kopubdotumbold"
                 android:gravity="center_vertical"
                 android:text="@string/name"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/text_name"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:text="이광준"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,26 +83,26 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/kopubdotumbold"
                 android:gravity="center_vertical"
                 android:text="@string/phonenumber"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/text_phonenumber"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="2"
 
                 android:gravity="center_vertical"
                 android:text="010-5342-9856"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,45 +110,45 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
 
             <android.widget.Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:background="@android:color/transparent" />
+                android:layout_weight="10"
+                android:background="@android:color/transparent"
+                />
 
             <android.widget.Button
                 android:id="@+id/btn_refuse"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="4"
                 android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="4dp"
                 android:background="@drawable/bg_regist_request_refuse"
                 android:fontFamily="@font/kopubdotumbold"
                 android:text="거부"
                 android:textColor="#5F9FFF"
-                android:textSize="15sp" />
+                android:textSize="15dp" />
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent" />
 
             <android.widget.Button
                 android:id="@+id/btn_accept"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="4"
                 android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="4dp"
                 android:background="@drawable/bg_regist_request_accept"
                 android:fontFamily="@font/kopubdotumbold"
                 android:text="승인"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15dp" />
 
         </LinearLayout>
     </LinearLayout>
