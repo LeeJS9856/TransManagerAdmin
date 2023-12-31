@@ -1,96 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3E3E3"
+    >
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
-        <LinearLayout
+        android:background="@color/white">
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="18dp"
+            android:layout_height="27dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16.69dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16.69dp"
+            android:background="@drawable/img_back" />
+
+        <!-- Auto layout, variables, and unit scale are not yet supported -->
+        <View
+            android:id="@+id/line"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation = "vertical"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:background="@drawable/bg_profile_list_cardview"
-            android:padding="13dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:textSize="13dp"
-                    android:text="차량"
-                    android:gravity="start|center"
-                    android:layout_gravity="center"
-                    android:textColor="#7491FF"
-                    android:fontFamily="@font/kopubdotumbold"/>
-                <TextView
-                    android:id="@+id/text_vihiclenumber"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:textSize="12dp"
-                    android:text="1234"
-                    android:gravity="start|center"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:textSize="13dp"
-                    android:text="@string/name"
-                    android:gravity="start|center"
-                    android:layout_gravity="center"
-                    android:textColor="#7491FF"
-                    android:fontFamily="@font/kopubdotumbold"/>
-                <TextView
-                    android:id="@+id/text_name"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:textSize="12dp"
-                    android:text="이준서"
-                    android:gravity="start|center"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:textSize="13dp"
-                    android:text="전화번호"
-                    android:gravity="start|center"
-                    android:layout_gravity="center"
-                    android:textColor="#7491FF"
-                    android:fontFamily="@font/kopubdotumbold"/>
-                <TextView
-                    android:id="@+id/text_phonenumber"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="7"
-                    android:textSize="12dp"
-                    android:text="010-8649-9856"
-                    android:gravity="start|center"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black" />
-            </LinearLayout>
+            android:layout_height="1dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/line"
+            />
 
-        </LinearLayout>
+        <!-- Auto layout, variables, and unit scale are not yet supported -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/kopubdotumbold"
+            android:gravity="center"
+            android:text="@string/request_regist"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
 
-
-    </androidx.cardview.widget.CardView>
-
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="17dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+</RelativeLayout>

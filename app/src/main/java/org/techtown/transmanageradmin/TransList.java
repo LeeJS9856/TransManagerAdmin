@@ -38,7 +38,6 @@ public class TransList extends AppCompatActivity {
     String[] today, arr_year, arr_data;
     String choiced_year, choiced_month, choiced_categorie, choiced_data;
     ImageButton bt_back;
-    TextView text_sum;
     RecyclerView recyclerView;
     ArrayList<String> list_from = new ArrayList<>();
     ArrayList<String> list_to = new ArrayList<>();
@@ -64,7 +63,6 @@ public class TransList extends AppCompatActivity {
         spinner_categorie = findViewById(R.id.spinner_categorie);
         spinner_data = findViewById(R.id.spinner_data);
         bt_back = findViewById(R.id.back);
-        text_sum = findViewById(R.id.text_sum);
 
         recyclerView = findViewById(R.id.recyclerView);
     }
@@ -316,8 +314,6 @@ public class TransList extends AppCompatActivity {
 
                         }
 
-                        //수량 총합 텍스트 집어넣기
-                        text_sum.setText(Double.toString(sum));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
