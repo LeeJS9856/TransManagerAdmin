@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -30,7 +31,7 @@ public class AddData extends AppCompatActivity {
     Context context = AddData.this;
     String[] arr_categorie = {"대리점", "출발지", "도착지", "제품"};
     String choicedCategorie, inputData;
-
+    private long mLastClickTime = 0; //중복 클릭 방지
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -87,6 +88,12 @@ public class AddData extends AppCompatActivity {
         btn_add_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //중복 클릭 방지
+                if(SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
                 //데이터 입력받기
                 inputData = edit_text_data.getText().toString();
                 if(inputData.isEmpty()) {

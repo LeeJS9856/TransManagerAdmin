@@ -229,4 +229,10 @@ public class Data extends AppCompatActivity {
             }
         });
     }
+
+    public void onBackPressed() { //뒤로가기 누를 시 이전페이지로
+        Intent intent = new Intent(context, Home.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
 }

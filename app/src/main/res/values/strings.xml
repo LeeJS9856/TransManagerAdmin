@@ -19,4 +19,5 @@
     <string name="input_data">데이터 입력</string>
     <string name="phonenumber">전화번호</string>
     <string name="request_dispatch">배차 요청</string>
+    <string name="dispatch_list">최근 배차 내역</string>
 </resources>
