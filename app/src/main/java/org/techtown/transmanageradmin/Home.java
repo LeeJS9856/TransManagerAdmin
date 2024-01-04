@@ -2,15 +2,26 @@ package org.techtown.transmanageradmin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Home extends AppCompatActivity {
     LinearLayout btn_transList, btn_statistic, btn_data, btn_dispatch, btn_requestRegist, btn_vihicleProfile;
+    TextView notice;
     private long backKeyPressedTime = 0;
 
     @Override
@@ -19,7 +30,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.home);
         xml();
         clickListener();
-
+        setNotice();
     }
 
     protected void xml() {
@@ -30,6 +41,7 @@ public class Home extends AppCompatActivity {
         btn_dispatch = findViewById(R.id.btn_dispatch);
         btn_requestRegist = findViewById(R.id.btn_request_regist);
         btn_vihicleProfile = findViewById(R.id.btn_vihicle_profile);
+        notice = findViewById(R.id.notice);
     }
 
     protected void clickListener() {
@@ -60,7 +72,8 @@ public class Home extends AppCompatActivity {
         btn_dispatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(Home.this, Dispatch.class);
+                startActivity(intent);
             }
         });
 
@@ -90,7 +103,35 @@ public class Home extends AppCompatActivity {
         } else {
             finish();
         }
+    }
 
+    public void setNotice() {
+        //등록요청 알림숫자
+        RequestRequestDataAdapter requestRequestDataAdapter = new RequestRequestDataAdapter(Home.this);
+        //리퀘스트 데이터 불러오기
+        Response.Listener<String> responseRequestListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try{
+                    JSONArray jsonArray = new JSONArray(response);
+                    int length = jsonArray.length();
+                    if(length==0) {
+                        notice.setVisibility(View.INVISIBLE);
+                        notice.setText("0");
+                    }
+                    else {
+                        notice.setVisibility(View.VISIBLE);
+                        notice.setText(Integer.toString(length));
+                    }
 
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        RequestRequestData requestRequestData =
+                new RequestRequestData(responseRequestListener);
+        RequestQueue queue = Volley.newRequestQueue(Home.this);
+        queue.add(requestRequestData);
     }
 }

@@ -33,7 +33,7 @@ import java.util.Date;
 public class TransList extends AppCompatActivity {
     Spinner spinner_year, spinner_month, spinner_categorie, spinner_data;
     double sum=0;
-    String[] arr_month = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+    String[] arr_month = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
     String[] arr_categorie = {"차량별", "대리점별", "출발지별", "도착지별", "제품별"};
     String[] today, arr_year, arr_data;
     String choiced_year, choiced_month, choiced_categorie, choiced_data;
@@ -91,7 +91,7 @@ public class TransList extends AppCompatActivity {
         int n = Integer.parseInt(today[0]) - 2023;
         arr_year = new String[n+1];
         for(int i=0;i<n+1;i++) {
-            int m = 2023 + n;
+            int m = 2023 + i;
             arr_year[i] = Integer.toString(m); //2023년~현재 연도 배열에 집어넣기
         }
 
