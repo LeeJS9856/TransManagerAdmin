@@ -1,6 +1,7 @@
 package org.techtown.transmanageradmin;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -23,7 +26,7 @@ public class Home extends AppCompatActivity {
     LinearLayout btn_transList, btn_statistic, btn_data, btn_dispatch, btn_requestRegist, btn_vihicleProfile;
     TextView notice;
     private long backKeyPressedTime = 0;
-
+    private final int SMS_RECEIVE_PERMISSION = 1;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class Home extends AppCompatActivity {
         xml();
         clickListener();
         setNotice();
+        requirePerms();
     }
 
     protected void xml() {
@@ -133,5 +137,13 @@ public class Home extends AppCompatActivity {
                 new RequestRequestData(responseRequestListener);
         RequestQueue queue = Volley.newRequestQueue(Home.this);
         queue.add(requestRequestData);
+    }
+
+    private void requirePerms() {
+        String[] permissions = {android.Manifest.permission.RECEIVE_SMS};
+        int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS);
+        if(permissionCheck == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(this, permissions, 1);
+        }
     }
 }

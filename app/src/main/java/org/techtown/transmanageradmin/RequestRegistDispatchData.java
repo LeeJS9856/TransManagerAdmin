@@ -13,7 +13,7 @@ public class RequestRegistDispatchData extends StringRequest {
     private Map<String, String> map;
 
     public RequestRegistDispatchData(String year, String month, String day, String vihiclenumber, String start, String end,
-                                     String product, String quantity, String agency, Response.Listener<String> listener) {
+                                     String product, String quantity, String agency,String conf, Response.Listener<String> listener) {
         super(Request.Method.POST, URL, listener, null);
 
         map = new HashMap<>();
@@ -26,7 +26,7 @@ public class RequestRegistDispatchData extends StringRequest {
         map.put("product", product);
         map.put("quantity", quantity);
         map.put("agency", agency);
-
+        map.put("conf", conf);
 
     }
 

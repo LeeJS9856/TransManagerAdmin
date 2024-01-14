@@ -466,7 +466,7 @@
                         android:layout_gravity="center"
                         android:gravity="center_vertical"
                         android:background="@drawable/bg_spinner"
-                        android:hint="수량입력 / 단위 : 대"
+                        android:hint="수량입력"
                         android:textColorHint="#ACACAC"
                         android:paddingStart="14dp"
                         android:paddingEnd="14dp"

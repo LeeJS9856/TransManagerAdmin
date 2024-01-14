@@ -91,7 +91,7 @@ public class Dispatch extends AppCompatActivity {
                         String product = item.getString("product");
                         String start = item.getString("start");
                         String end = item.getString("end");
-                        String quantity = item.getString("quantity")+"대";
+                        String quantity = item.getString("quantity");
                         String agency = item.getString("agency");
                         TransData transData = new TransData(i, today_year, today_month, day, vihicle_number, product, start, end, quantity, agency);
                         data.add(transData);

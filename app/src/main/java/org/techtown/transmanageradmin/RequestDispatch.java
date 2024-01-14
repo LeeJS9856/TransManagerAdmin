@@ -274,7 +274,7 @@ public class RequestDispatch extends AppCompatActivity {
                     };
                     RequestRegistDispatchData requestRegistDispatchData =
                             new RequestRegistDispatchData(getTime[0], getTime[1], getTime[2], choiced_vihiclenumber,
-                                    choiced_from, choiced_to, choiced_product, entered_quantity, choiced_agency, responseListener);
+                                    choiced_from, choiced_to, choiced_product, entered_quantity, choiced_agency, "UNCHECK", responseListener);
                     RequestQueue queue = Volley.newRequestQueue(context);
                     queue.add(requestRegistDispatchData);
                 }
