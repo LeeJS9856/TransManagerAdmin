@@ -121,6 +121,25 @@ public class AddData extends AppCompatActivity {
                             new RequestRegistMapData(choicedCategorie, inputData, responseListener);
                     RequestQueue queue = Volley.newRequestQueue(context);
                     queue.add(requestRegistMapData);
+
+                    if(choicedCategorie.equals("대리점")) {
+                        Response.Listener<String> responseListener2 = new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try{
+                                    JSONObject jsonResponse = new JSONObject(response);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        };
+                        InsertPriceData insertPriceData =
+                                new InsertPriceData(inputData, "0", responseListener2);
+                        RequestQueue queue2 = Volley.newRequestQueue(context);
+                        queue2.add(insertPriceData);
+                    }
+
                 }
             }
         });

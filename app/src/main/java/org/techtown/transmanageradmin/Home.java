@@ -34,7 +34,6 @@ public class Home extends AppCompatActivity {
         xml();
         clickListener();
         setNotice();
-        requirePerms();
     }
 
     protected void xml() {
@@ -139,11 +138,4 @@ public class Home extends AppCompatActivity {
         queue.add(requestRequestData);
     }
 
-    private void requirePerms() {
-        String[] permissions = {android.Manifest.permission.RECEIVE_SMS};
-        int permissionCheck = ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS);
-        if(permissionCheck == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(this, permissions, 1);
-        }
-    }
 }
