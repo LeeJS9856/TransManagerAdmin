@@ -23,7 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Home extends AppCompatActivity {
-    LinearLayout btn_transList, btn_statistic, btn_data, btn_dispatch, btn_requestRegist, btn_vihicleProfile;
+    LinearLayout btn_transList, btn_price, btn_data, btn_dispatch, btn_requestRegist, btn_vihicleProfile;
     TextView notice;
     private long backKeyPressedTime = 0;
     private final int SMS_RECEIVE_PERMISSION = 1;
@@ -39,7 +39,7 @@ public class Home extends AppCompatActivity {
     protected void xml() {
         //xml과 연결
         btn_transList = findViewById(R.id.btn_trans_list);
-        btn_statistic = findViewById(R.id.btn_statistic);
+        btn_price = findViewById(R.id.btn_price);
         btn_data = findViewById(R.id.btn_data);
         btn_dispatch = findViewById(R.id.btn_dispatch);
         btn_requestRegist = findViewById(R.id.btn_request_regist);
@@ -57,7 +57,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        btn_statistic.setOnClickListener(new View.OnClickListener() {
+        btn_price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
