@@ -71,7 +71,7 @@
                 android:orientation="vertical" />
 
             <LinearLayout
-                android:id="@+id/btn_statistic"
+                android:id="@+id/btn_price"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -96,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/img_statistic" />
+                        android:src="@drawable/img_data" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -112,7 +112,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/kopubdotumbold"
                     android:gravity="center"
-                    android:text="@string/statistic"
+                    android:text="@string/Price"
                     android:textColor="@color/sky"
                     android:textSize="25dp" />
             </LinearLayout>
@@ -167,7 +167,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/img_data" />
+                        android:src="@drawable/img_statistic" />
 
                     <LinearLayout
                         android:layout_width="0dp"

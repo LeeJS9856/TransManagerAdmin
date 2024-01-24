@@ -20,4 +20,5 @@
     <string name="phonenumber">전화번호</string>
     <string name="request_dispatch">배차 요청</string>
     <string name="dispatch_list">최근 배차 내역</string>
+    <string name="Price">단가</string>
 </resources>

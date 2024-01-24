@@ -86,6 +86,19 @@ public class MapDataAdapter extends RecyclerView.Adapter<MapDataAdapter.ViewHold
                         dataSet.remove(position);
                         notifyItemRemoved(position);
                         notifyItemChanged(position, dataSet.size());
+
+                        //대리점이라면 대리점테이블에서 해당 데이터 삭제
+                        if(property.equals("대리점")) {
+                            Response.Listener<String> ResponseListener2 = new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+
+                                }
+                            };
+                            DeletePriceData deletePriceData = new DeletePriceData(name, ResponseListener2);
+                            RequestQueue Queue2 = Volley.newRequestQueue(view.getContext());
+                            Queue2.add(deletePriceData);
+                        }
                     }
                 });
                 alertBuilder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
