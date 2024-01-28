@@ -60,7 +60,8 @@ public class Home extends AppCompatActivity {
         btn_price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(Home.this, Price.class);
+                startActivity(intent);
             }
         });
 
